@@ -1,59 +1,37 @@
-<h1>WebShop</h1>
-<p>Welcome</p>
-
-<p>To help you get started, here are some Articles</p>
-
-<div class='card-body'>
-  <div class='row'>
-    <div class='col-md-2'>Filter by:</div>
-    <div class='col-md-4'>
-      <input type='text'
-             [(ngModel)]='listFilter' />
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+    
+    
+    <div class='table-responsive'>
+      <table class='table'>
+        <thead>
+          <tr>
+            
+            <th>Product</th>
+            <th>Available</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let product of filteredProducts'>
+            <td>
+              [src]='product.imageUrl'
+              [title]='product.productName'
+              [style.width.px]='imageWidth'
+              [style.margin.px]='imageMargin'>
+            </td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price | currency:'USD':'symbol':'1.2-2'}}</td>
+            <td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Comment</th>
-          <th scope="col">Price</th>
-          <th scope="col">Buy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Monitor</th>
-          <td>20"</td>
-          <td>200.00 USD</td>
-          <td><button type="button" class="btn btn-primary">Buy</button></td>
-        </tr>
-        <tr>
-          <th scope="row">Keyboard</th>
-          <td>With Numpad</td>
-          <td>140.00 USD</td>
-          <td><button type="button" class="btn btn-primary">Buy</button></td>
-        </tr>
-        <tr>
-          <th scope="row">Mouse</th>
-          <td>RGB</td>
-          <td>79.00 USD</td>
-          <td><button type="button" class="btn btn-primary">Buy</button></td>
-        </tr>
-
-      </tbody>
-    </table>
 
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        First in DOM, no order applied
-      </div>
-      <div class="col order-5">
-        Second in DOM, with a larger order
-      </div>
-      <div class="col order-1">
-        Third in DOM, with an order of 1
-      </div>
-    </div>
-  </div>
+
 </div>
