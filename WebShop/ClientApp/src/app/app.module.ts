@@ -17,10 +17,10 @@ import { productService } from './services/productservice';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' }
-    ]),
+    { path: 'home', component: HomeComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', redirectTo: 'home', pathMatch: 'full' }
+], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
