@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { productService } from './services/productservice';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]),
+    BrowserAnimationsModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [productService]
 })
 export class AppModule { }
