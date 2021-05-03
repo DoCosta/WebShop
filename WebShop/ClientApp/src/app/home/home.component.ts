@@ -1,10 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IProduct } from '../products/product';
-import { ProductService } from '../products/products.service';
 import { productService } from '../services/productservice';
 
 @Component({
+  selector: 'home',
   templateUrl: './home.component.html'
 })
 
@@ -16,7 +16,4 @@ export class HomeComponent {
   constructor(
     private productService: productService) { }
 
-
-
 }
-

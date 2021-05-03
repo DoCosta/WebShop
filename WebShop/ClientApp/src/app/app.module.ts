@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { productService } from './services/productservice';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +19,13 @@ import { productService } from './services/productservice';
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatCardModule,
+    MatToolbarModule,
     RouterModule.forRoot([
-    { path: 'home', component: HomeComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', redirectTo: 'home', pathMatch: 'full' }
-], { relativeLinkResolution: 'legacy' }),
+      { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }
+    ], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],

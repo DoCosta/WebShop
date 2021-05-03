@@ -1,47 +1,11 @@
-<div class='card'>
-  <div class='card-header'>
-    {{pageTitle}}
+<div class='card-body'>
+  <div>
+    <mat-card *ngFor="let product of products | async">
+      <mat-card-header>
+        <mat-card-title>{{product.productName}}</mat-card-title>
+        <mat-card-subtitle>CHF {{product.price}}.-</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <div class='card-body'>
-    
-    
-    <div class='table-responsive'>
-      <table class='table'>
-        <thead>
-          <tr>
-            
-            <th>Product</th>
-            <th>Available</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let product of products | async'>
-            <td>
-              [src]='product.imageUrl'
-              [title]='product.productName'
-              [style.width.px]='imageWidth'
-              [style.margin.px]='imageMargin'>
-            </td>
-            <td>{{ product.productName }}</td>
-            <td>{{ product.releaseDate }}</td>
-            <td>{{ product.price | currency:'CHF':'symbol':'1.2-2'}}</td>
-            <td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-  </div>
-
-</div>
