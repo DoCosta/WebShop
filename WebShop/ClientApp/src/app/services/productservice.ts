@@ -1,8 +1,10 @@
 import { of } from "rxjs";
 import { Observable } from "rxjs";
 import { IProduct } from "../products/product";
+import { Injectable } from "@angular/core";
 
 
+@Injectable()
 export class productService {
 
   public get(): Observable<IProduct[]> {
