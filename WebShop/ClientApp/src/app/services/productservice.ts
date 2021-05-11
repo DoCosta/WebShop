@@ -17,6 +17,22 @@ export class productService {
           description: "RGB",
           price: 30.00,
           imageUrl: "",
+        },
+        {
+          productId: 3,
+          productName: "Bildschirm",
+          releaseDate: "12.01.2021",
+          description: "No Numpad",
+          price: 50.00,
+          imageUrl: "",
+        },
+        {
+          productId: 4,
+          productName: "PC",
+          releaseDate: "04.02.2021",
+          description: "RTX3080",
+          price: 930.00,
+          imageUrl: "",
         }
       ]
     );
